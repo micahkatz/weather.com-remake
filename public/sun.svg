@@ -1,0 +1,5 @@
+<svg set="weather" skycode="32" theme="full" name="" class="Icon--icon--2aW0V Icon--fullTheme--3Fc-5" data-testid="Icon"
+    viewBox="0 0 200 200">
+    <title>Sunny</title>
+    <use xlink:href="#svg-symbol-sun"></use>
+</svg>

@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main {
+    background-color: #005986;
+    background-image: linear-gradient(0deg,#d8eeee,#d8eeee 25%,#64b3c9 65%,#005986 90%,#005986);
+    min-height: 100vh;
+
+}
+
+
+
+.icon {
+    margin-left: 5px;
+    margin-right: 5px;
+}

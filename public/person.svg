@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+    class="Icon--icon--2aW0V ProfileAvatar--profileIcon--33DT- AccountLinks--AnonymousAccountIcon--1yFeL"
+    name="user-anonymous" set="nav" theme="" data-testid="Icon" viewBox="0 0 24 24">
+    <title>User Anonymous</title>
+    <path fill='white'
+        d="M12 0c6.627 0 12 5.373 12 12s-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0zm0 1.35C6.118 1.35 1.35 6.118 1.35 12c0 3.249 1.455 6.159 3.75 8.112V19.8l.005-.213A4.4 4.4 0 019.5 15.4l5.213.005A4.4 4.4 0 0118.9 19.8l.001.312A10.626 10.626 0 0022.65 12c0-5.882-4.768-10.65-10.65-10.65zm0 3.8a4.3 4.3 0 110 8.6 4.3 4.3 0 010-8.6z" />
+</svg>
