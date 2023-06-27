@@ -14,7 +14,7 @@ export default function Home() {
       </Head>
       <main className="main">
         <Header />
-        <AdComponent kind='banner' className='center-top-ad' />
+        <AdComponent kind='banner' containerClassName='center-top-ad mt-2' />
         <div className='main-content'>
           <div className="card">
             <h3>TORNADO DESTRUCTION</h3>
@@ -35,10 +35,10 @@ export default function Home() {
             </div>
           </div>
           <div className="card">
-            <AdComponent kind='vertical-banner' className='vertical-right-banner' />
+            <AdComponent kind='vertical-banner' className='vertical-right-banner' containerClassName='vertical-right-banner' />
           </div>
           <div className="card col-span-2">
-            <AdComponent kind='banner' className='!w-full !h-20' />
+            <AdComponent kind='banner' className='!w-full !h-20' containerClassName="!w-full !h-20" />
           </div>
         </div>
       </main>

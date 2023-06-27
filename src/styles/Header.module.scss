@@ -4,10 +4,12 @@
     color: white;
     justify-content: space-around;
     background: #005986;
+
     .logo {
         padding: 5px;
         margin-right: 5px;
     }
+
     .input-wrapper {
         background: #fff3;
         border-radius: 15px;
@@ -22,20 +24,23 @@
         ::placeholder {
             color: white
         }
+
         input {
             all: unset;
         }
 
         .searchIcon {
-            cursor:pointer;
+            cursor: pointer;
             margin-left: 5px
         }
     }
+
     .logoAndText {
         display: flex;
         align-items: center;
 
     }
+
     .headerRightButtons {
         display: flex;
         align-items: center;
@@ -62,6 +67,7 @@
         min-width: 20rem;
     }
 }
+
 .weatherSelector {
     background: #0006;
     display: grid;

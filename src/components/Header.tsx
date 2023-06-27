@@ -2,8 +2,17 @@ import Image from 'next/image'
 import React from 'react'
 import styles from '../styles/Header.module.scss'
 import Link from 'next/link'
+import axios, { type AxiosResponse } from 'axios'
+import TemperatureComponent from './TemperatureComponent'
 
 const Header = () => {
+    const [currTemp, setCurrTemp] = React.useState<number>()
+    React.useEffect(() => {
+        axios.get('/api/weather').then((weatherResponse: AxiosResponse<WeatherData>) => {
+            console.log({ weatherResponse })
+            setCurrTemp(weatherResponse.data.currentConditions.temp)
+        }).catch((err) => console.error(err))
+    }, [])
     return (
         <div>
             <div className={styles.headerTop}>
@@ -17,15 +26,16 @@ const Header = () => {
                 </div>
                 <div className={styles.headerRightButtons}>
                     <Image src='globe.svg' alt='globe' className={'icon'} width={24} height={24} />
+                    <span className='ml-1 mr-4'>US | ºF</span>
                     <Image src='person.svg' alt='person' className={'icon'} width={24} height={24} />
                 </div>
             </div>
             <div className={styles.localWeather}>
                 <div className={styles.weatherCard}>
-                    <span>🌧️ 85º Miami, FL</span>
+                    <TemperatureComponent location='Miami, FL' />
                 </div>
                 <div className={styles.weatherCard}>
-                    <span>☀️ 90º Dallas, TX</span>
+                    <TemperatureComponent location='Dallas, TX' />
                 </div>
                 <div />
             </div>
