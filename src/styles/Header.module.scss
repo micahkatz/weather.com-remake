@@ -4,6 +4,9 @@
     color: white;
     justify-content: space-around;
     background: #005986;
+    gap: 1rem;
+    padding-left: 10px;
+    padding-right: 10px;
 
     .logo {
         padding: 5px;
@@ -13,13 +16,15 @@
     .input-wrapper {
         background: #fff3;
         border-radius: 15px;
-        padding-left: 30px;
-        padding-right: 30px;
+        flex-grow: 1;
+        padding-left: clamp(5px, 30px, 10vw);
+        padding-right: clamp(5px, 30px, 10vw);
         padding-top: 5px;
         padding-bottom: 5px;
         margin-left: 5px;
         margin-right: 5px;
         display: flex;
+        justify-content: center;
 
         ::placeholder {
             color: white
@@ -27,6 +32,8 @@
 
         input {
             all: unset;
+            overflow-x: hidden;
+            min-width: 2rem !important;
         }
 
         .searchIcon {
@@ -39,23 +46,33 @@
         display: flex;
         align-items: center;
 
+        @media (max-width: 768px) {
+            h1 {
+                display: none
+            }
+        }
     }
 
     .headerRightButtons {
-        display: flex;
-        align-items: center;
+        display: none
+    }
+
+    @media (min-width: 576px) {
+        .headerRightButtons {
+            display: flex;
+            align-items: center;
+        }
     }
 }
 
 .localWeather {
     background: #fff3;
     display: flex;
+    overflow-x: scroll;
     align-items: center;
     color: white;
     padding-top: 5px;
     padding-bottom: 5px;
-    padding-left: 10rem;
-    padding-right: 10rem;
 
     .weatherCard {
         display: flex;
@@ -64,7 +81,12 @@
         justify-content: center;
         padding: 5px;
         border-right: #fff3 solid 1px;
-        min-width: 20rem;
+        min-width: 10rem;
+
+        @media (min-width: 768px) {
+            min-width: 20rem;
+        }
+
     }
 }
 
