@@ -1,3 +1,5 @@
+type AdKind = "default" | "banner" | "vertical";
+
 interface WeatherData {
   queryCost: number;
   latitude: number;

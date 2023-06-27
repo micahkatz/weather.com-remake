@@ -1,15 +1,14 @@
 .bannerAd {
-    height: 250px;
-    width: 600px;
-    background-color: red;
-    object-fit: cover;
+    // object-fit: contain;
+    min-height: 10rem;
+    position: relative;
 }
 
-.verticalBannerAd {
-    height: 500px;
-    width: 250px;
-    background-color: red;
-    object-fit: cover;
+.bannerAdImg {
+    object-fit: contain;
+    position: relative !important;
+    min-height: 10rem;
+    max-height: 40rem;
 }
 
 .adLabel {

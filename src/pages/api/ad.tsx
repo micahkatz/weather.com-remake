@@ -30,33 +30,29 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   switch (req.method) {
     case "GET":
 
-      const { width, height } = req.query
+      const browserName = req.query.browserName as string
+      const kind = (req.query?.kind || 'default') as AdKind
 
       console.log({ query: req.query })
-      // const width = 100;
-      // const height = 150;
+
       try {
         console.log('fetching ad')
-        let url = cloudinary.v2.url("https://res.cloudinary.com/micahk/image/upload/f_auto,q_auto/sample", {
-          width,
-          height,
-          crop: 'crop',
-          fetch_format: "auto",
-        });
-        const android = true
-        if (android) {
-          const urls = await cloudinary.v2.api.resources_by_tag('Android', {
-            width, height,
-            crop: 'crop', fetch_format: "auto",
+        let url = ''
+        if (browserName) {
+
+          const urls = await cloudinary.v2.api.resources_by_tag(browserName && browserName !== 'none' ? browserName : 'Safari', {
+            // width, height,
+            // crop: 'crop', 
+            fetch_format: "auto",
           })
-          url = urls.resources[0].url
+          url = (urls.resources.filter(item => item.public_id.includes(kind))[0]?.url) || ''
         }
 
-        const buffer = await getBuffer(url)
-        if (buffer) {
+        if (url) {
+          const buffer = await getBuffer(url)
           res.status(200).send(buffer)
         } else {
-          res.status(400).send("")
+          res.status(404).send("")
         }
         break;
       } catch (err) {
