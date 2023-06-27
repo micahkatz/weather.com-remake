@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" set="ui" name="triangle-down"
+    class="Icon--icon--2aW0V Icon--lightTheme--2Ktm2 LanguageSelector--arrowIcon--3LCpZ" theme="light"
+    data-testid="Icon" viewBox="0 0 24 24" style="width: 17px;">
+    <title>Arrow down</title>
+    <path fill='white' d="M23.765 5.167h-23.53l11.75 13.666 11.779-13.666z" />
+</svg>

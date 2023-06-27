@@ -70,11 +70,34 @@
 
 .weatherSelector {
     background: #0006;
-    display: grid;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 3rem;
     color: white;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 10rem;
-    padding-right: 10rem;
-    grid-template-columns: repeat(8, 1fr);
+    padding-left: 5rem;
+    padding-right: 5rem;
+    height: 40px;
+    overflow: hidden;
+
+    .wrappedNav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 3rem;
+        padding-top: 5px;
+    }
+
+    .moreForecasts {
+        display: flex;
+        gap: 1rem;
+        padding-top: 5px;
+        white-space: nowrap;
+
+    }
+
+    .downArrow {
+        height: 15px;
+        margin-top: 5px;
+    }
 }

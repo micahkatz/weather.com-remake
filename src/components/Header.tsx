@@ -2,17 +2,9 @@ import Image from 'next/image'
 import React from 'react'
 import styles from '../styles/Header.module.scss'
 import Link from 'next/link'
-import axios, { type AxiosResponse } from 'axios'
 import TemperatureComponent from './TemperatureComponent'
 
 const Header = () => {
-    const [currTemp, setCurrTemp] = React.useState<number>()
-    React.useEffect(() => {
-        axios.get('/api/weather').then((weatherResponse: AxiosResponse<WeatherData>) => {
-            console.log({ weatherResponse })
-            setCurrTemp(weatherResponse.data.currentConditions.temp)
-        }).catch((err) => console.error(err))
-    }, [])
     return (
         <div>
             <div className={styles.headerTop}>
@@ -40,14 +32,21 @@ const Header = () => {
                 <div />
             </div>
             <div className={styles.weatherSelector}>
-                <Link href='/'>Today</Link>
-                <Link href='/'>Hourly</Link>
-                <Link href='/'>10 Day</Link>
-                <Link href='/'>Weekend</Link>
-                <Link href='/'>Monthly</Link>
-                <Link href='/'>Radar</Link>
-                <Link href='/'>Storms</Link>
-                <Link href='/'>More Forecasts</Link>
+                <div className={styles.wrappedNav}>
+                    <Link href='/'>Today</Link>
+                    <Link href='/'>Hourly</Link>
+                    <Link href='/'>10 Day</Link>
+                    <Link href='/'>Weekend</Link>
+                    <Link href='/'>Monthly</Link>
+                    <Link href='/'>Radar</Link>
+                    <Link href='/'>Storms</Link>
+                </div>
+                <Link href='/' className={styles.moreForecasts}>
+                    <span>
+                        More Forecasts
+                    </span>
+                    <Image src='/arrow-down.svg' className={styles.downArrow} alt='arrow-down' height={15} width={15} />
+                </Link>
             </div>
         </div>
     )
